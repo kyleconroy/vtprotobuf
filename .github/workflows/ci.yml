@@ -59,7 +59,7 @@ jobs:
 
     - run: wget https://github.com/tinygo-org/tinygo/releases/download/v0.22.0/tinygo_0.22.0_amd64.deb
     - run: sudo dpkg -i tinygo_0.22.0_amd64.deb
-    - run: tinygo test -count=1 ./conformance/...
+    - run: tinygo test ./conformance/...
       env:
         PROTOBUF_ROOT: /home/runner/src/protobuf-3.16.0
 
