@@ -56,4 +56,11 @@ jobs:
     - run: go test -count=1 ./conformance/...
       env:
         PROTOBUF_ROOT: /home/runner/src/protobuf-3.16.0
+
+    - run: wget https://github.com/tinygo-org/tinygo/releases/download/v0.22.0/tinygo_0.22.0_amd64.deb
+    - run: sudo dpkg -i tinygo_0.22.0_amd64.deb
+    - run: /usr/local/tinygo/bin/tinygo test -count=1 ./conformance/...
+      env:
+        PROTOBUF_ROOT: /home/runner/src/protobuf-3.16.0
+
     - run: git --no-pager diff --exit-code
